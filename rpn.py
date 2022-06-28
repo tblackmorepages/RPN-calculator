@@ -23,7 +23,7 @@ class Calculator:
                     current = int(sub_str) + current*10
                 else:
                     current = int(sub_str)
-            # If next character is a space and a number is stored in current add number to the stack
+            # If next character is a space and a number is stored in current add it to the stack
             elif sub_str == " ":
                 if current >= 0:
                     stack.append(current)

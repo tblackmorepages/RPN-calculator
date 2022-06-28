@@ -50,13 +50,15 @@ To exit the calculator use any of the following: `exit`, `quit`, `close`.
 
 ```python
 $ python3 rpn.py
-Launching RPN calculator...
+Welcome to RPN calculator, for help enter: `help` or `?`
 > 5 2 /
 2
 > three  seven  *
 21
 > two  3 * 11  fourteen  * +
 160
+> exit
+Exiting RPN Calculator...
 ```
 
 
