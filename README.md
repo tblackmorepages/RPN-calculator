@@ -50,7 +50,7 @@ To exit the calculator use any of the following: `exit`, `quit`, `close`.
 
 ```python
 $ python3 rpn.py
-Welcome to RPN calculator, for help enter: `help` or `?`
+"Welcome to RPN calculator, for help enter: `help` or `?`"
 > 5 2 /
 2
 > three  seven  *
@@ -58,13 +58,13 @@ Welcome to RPN calculator, for help enter: `help` or `?`
 > two  3 * 11  fourteen  * +
 160
 > exit
-Exiting RPN Calculator...
+"Exiting RPN Calculator..."
 ```
 
 
 ## Unit Testing
 
-Unit tests can be run by downloading the `pytest_rpn.py` file and using the following command in the terminal:
+Unit tests can be run by downloading the `pytest_rpn.py` file and running the following command in the terminal:
 ```bash
 python3 -m pytest pytest_rpn.py
 ```
