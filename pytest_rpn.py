@@ -3,6 +3,7 @@ from rpn import Calculator
 
 tests = [
     ('856 2023 10 + 70 4 / 9 * % -', 812),
+    ('65 94 0 * +', 65),
     ('one million three hundred forty two  eleven  -  six  %  eighty eight  +  nine  /', 10),
     ('two thousand nine hundred  12  seven  * -  thirty  3 % 59 + /', 47),
     ('4 5 -', "Error: result is not a whole number"),
