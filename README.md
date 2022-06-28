@@ -6,7 +6,7 @@ A command line program that accepts an RPN expression as input and evaluates it.
 
 ## Installation
 
-First install all requirements in requirements.txt
+First download requirements.txt and install in terminal using:
 
 ```bash
 pip install -r requirements.txt
