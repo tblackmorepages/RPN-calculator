@@ -62,7 +62,7 @@ Launching RPN calculator...
 
 ## Unit Testing
 
-Unit tests can be run by downloading the `tests` folder and using the following command in the terminal:
+Unit tests can be run by downloading the `pytest_rpn.py` file and using the following command in the terminal:
 ```bash
-python3 -m pytest tests
+python3 -m pytest pytest_rpn.py
 ```
