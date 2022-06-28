@@ -22,8 +22,15 @@ python3 rpn.py
 Input expressions should follow the Reverse Polish Notation syntax. Each number or operator should be separated from its neighbors by a single space **unless** it is a number in text format which should be separated by a double space. For example the following expressions are equivalent:
 
 ```python
-> 523 74 +
-> five hundred twenty three  seventy four  +
+> 6 11 +
+> six  eleven  +
+```
+
+Whole numbers expressed as text can range from 0 to 999,999,999,999. Each word used to express a single number is separated by a single space: 
+
+```python
+> 523 74 -
+> five hundred twenty three  seventy four  -
 ```
 
 The calculator supports the following operations:

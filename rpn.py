@@ -45,10 +45,11 @@ class Calculator:
                 else:
                     stack.append(a % b)
             else:
-                return "Exiting RPN Calculator..."
+                return "Error: Expression invalid"
         # Check that correct number of operators has been given
         if len(stack) > 1:
             return "Error: Expression invalid"
+
         result = stack.pop()
         return result
 
@@ -67,28 +68,39 @@ class Calculator:
             for sub_str in str_split:
                 word_char_search = re.search('[^a-zA-Z ]', sub_str)
                 if word_char_search == None:
-                    try:
-                        w2n.word_to_num(sub_str)
-                    except:
-                        return "Please enter a valid expression:"
-                    else:
-                        number = str(w2n.word_to_num(sub_str))
-                        result.append(number)
+                    number = str(w2n.word_to_num(sub_str))
+                    result.append(number)
                 else:
                     result.append(sub_str)
         return ' '.join(result)
 
 
-print("Launching RPN calculator...")
-rpn_calc = Calculator()
-user_input = ""
-# To exit calculator use following expressions:
-while user_input not in ["exit", "quit", "q", "close"]:
-    # Get user input
-    # regex = re.search('[a-zA-Z]', user_input)
-    # if regex != None:
-    #     print("Please enter a valid expression:")
-    user_input = input("> ")
-    number_input = rpn_calc.text_to_numbers(user_input)
-    output = rpn_calc.evaluate(number_input)
-    print(output)
+def help_info():
+    print('RPN calculator usage:\nInput: Expression in Reverse Polish Notation containing whole '
+          'numbers (0-999,999,999,999) and operators separated by a single space. The following '
+          'operators are supported: addition (`+`), subtraction (`-`), multiplication (`*`), integer'
+          ' division (`/`), and modulo (`%`).\ne.g. > 6 11 +\nNumbers can be expressed in numerical or alphabetical '
+          'format but the latter format must be separated with two spaces.\ne.g. > six  '
+          'eleven  +\nOutput: Whole number (or negative integer) solution to expression.\nTo exit '
+          'the calculator: `exit`, `quit` or `close`.')
+
+
+def main():
+    print("Welcome to RPN calculator, for help enter: `help` or `?`")
+    rpn_calc = Calculator()
+    user_input = ""
+    while user_input not in ["exit", "quit", "close"]:
+        user_input = input("> ")
+        if user_input.lower() in ["help", "?"]:
+            help_info()
+        elif user_input in ["exit", "quit", "close"]:
+            break
+        else:
+            number_input = rpn_calc.text_to_numbers(user_input)
+            output = rpn_calc.evaluate(number_input)
+            print(output)
+    print("Exiting RPN Calculator...")
+
+
+if __name__ == '__main__':
+    main()
