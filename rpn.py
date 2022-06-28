@@ -45,7 +45,7 @@ class Calculator:
                 else:
                     stack.append(a % b)
             else:
-                return
+                return "Exiting RPN Calculator..."
         # Check that correct number of operators has been given
         if len(stack) > 1:
             return "Error: Expression invalid"
@@ -70,7 +70,7 @@ class Calculator:
                     try:
                         w2n.word_to_num(sub_str)
                     except:
-                        return("Please enter a valid expression:")
+                        return "Please enter a valid expression:"
                     else:
                         number = str(w2n.word_to_num(sub_str))
                         result.append(number)
@@ -92,4 +92,3 @@ while user_input not in ["exit", "quit", "q", "close"]:
     number_input = rpn_calc.text_to_numbers(user_input)
     output = rpn_calc.evaluate(number_input)
     print(output)
-print("Exiting RPN Calculator...")
