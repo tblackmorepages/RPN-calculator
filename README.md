@@ -19,7 +19,9 @@ python3 rpn.py
 
 ## Usage
 
-Input expressions should follow the Reverse Polish Notation syntax. Each number or operator should be separated from its neighbors by a single space **unless** it is a number in text format which should be separated by a double space. For example the following expressions are equivalent:
+Input expressions should follow the Reverse Polish Notation syntax and contain only whole numbers. The output can also only be whole numbers expressions that break this will result in an error. 
+
+Each number or operator should be separated from its neighbors by a single space **unless** it is a number in text format which should be separated by a double space. For example the following expressions are equivalent:
 
 ```python
 > 6 11 +

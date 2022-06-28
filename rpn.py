@@ -49,9 +49,12 @@ class Calculator:
         # Check that correct number of operators has been given
         if len(stack) > 1:
             return "Error: Expression invalid"
-
         result = stack.pop()
-        return result
+        # Check output is a whole number
+        if result < 0:
+            return "Error: result is not a whole number"
+        else:
+            return result
 
     def text_to_numbers(self, string):
         """
@@ -79,10 +82,10 @@ def help_info():
     print('RPN calculator usage:\nInput: Expression in Reverse Polish Notation containing whole '
           'numbers (0-999,999,999,999) and operators separated by a single space. The following '
           'operators are supported: addition (`+`), subtraction (`-`), multiplication (`*`), integer'
-          ' division (`/`), and modulo (`%`).\ne.g. > 6 11 +\nNumbers can be expressed in numerical or alphabetical '
-          'format but the latter format must be separated with two spaces.\ne.g. > six  '
-          'eleven  +\nOutput: Whole number (or negative integer) solution to expression.\nTo exit '
-          'the calculator: `exit`, `quit` or `close`.')
+          ' division (`/`), and modulo (`%`).\ne.g. > 6 11 +\nNumbers can be expressed in numerical '
+          'or alphabetical format but the latter format must be separated with two spaces.\ne.g. > '
+          'six  eleven  +\nOutput: Whole number solution to expression.\nTo exit the calculator: '
+          '`exit`, `quit` or `close`.')
 
 
 def main():
